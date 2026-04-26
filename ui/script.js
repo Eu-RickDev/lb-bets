@@ -553,9 +553,9 @@
     const RED_NUMS = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]);
     const SECTOR = 360 / WHEEL_ORDER.length;
     const SECTOR_FILL = {
-        red: 'oklch(0.55 0.24 27)',
-        black: 'oklch(0.18 0.02 0)',
-        green: 'oklch(0.55 0.16 150)',
+        red: '#c12c1d',
+        black: '#2a1d1f',
+        green: '#1f8950',
     };
     function colorOf(n) {
         if (n === 0) return 'green';
@@ -581,7 +581,7 @@
         svg.classList.add('wheel-svg');
 
         const defs = document.createElementNS(NS, 'defs');
-        defs.innerHTML = '<radialGradient id="wheel-shine" cx="50%" cy="50%" r="50%"><stop offset="60%" stop-color="oklch(1 0 0 / 0)"/><stop offset="100%" stop-color="oklch(1 0 0 / 0.12)"/></radialGradient>';
+        defs.innerHTML = '<radialGradient id="wheel-shine" cx="50%" cy="50%" r="50%"><stop offset="60%" stop-color="rgba(255, 255, 255, 0)"/><stop offset="100%" stop-color="rgba(255, 255, 255, 0.12)"/></radialGradient>';
         svg.appendChild(defs);
 
         const cx = 100, cy = 100, rOuter = 96, rInner = 50, rText = (rOuter + rInner) / 2;
@@ -594,7 +594,7 @@
             const path = document.createElementNS(NS, 'path');
             path.setAttribute('d', arcPath(cx, cy, rOuter, rInner, startA, endA));
             path.setAttribute('fill', SECTOR_FILL[c]);
-            path.setAttribute('stroke', 'oklch(0.85 0.16 85 / 0.4)');
+            path.setAttribute('stroke', 'rgba(217, 179, 66, 0.4)');
             path.setAttribute('stroke-width', '0.5');
             svg.appendChild(path);
 
@@ -624,8 +624,8 @@
         hubOuter.setAttribute('cx', cx);
         hubOuter.setAttribute('cy', cy);
         hubOuter.setAttribute('r', rInner);
-        hubOuter.setAttribute('fill', 'oklch(0.2 0.04 60)');
-        hubOuter.setAttribute('stroke', 'oklch(0.85 0.16 85 / 0.6)');
+        hubOuter.setAttribute('fill', '#322518');
+        hubOuter.setAttribute('stroke', 'rgba(217, 179, 66, 0.6)');
         hubOuter.setAttribute('stroke-width', '1.5');
         svg.appendChild(hubOuter);
 
@@ -633,14 +633,14 @@
         hubInner.setAttribute('cx', cx);
         hubInner.setAttribute('cy', cy);
         hubInner.setAttribute('r', rInner - 6);
-        hubInner.setAttribute('fill', 'oklch(0.12 0.02 60)');
+        hubInner.setAttribute('fill', '#1c1610');
         svg.appendChild(hubInner);
 
         const dot = document.createElementNS(NS, 'circle');
         dot.setAttribute('cx', cx);
         dot.setAttribute('cy', cy);
         dot.setAttribute('r', 4);
-        dot.setAttribute('fill', 'oklch(0.85 0.16 85)');
+        dot.setAttribute('fill', '#d9b342');
         svg.appendChild(dot);
 
         return svg;
@@ -1189,7 +1189,7 @@
                         marginTop: '16px',
                         borderRadius: '8px',
                         border: '1px solid var(--border)',
-                        background: 'oklch(0.14 0.04 305 / 0.4)',
+                        background: 'rgba(29, 21, 49, 0.4)',
                         padding: '8px 12px',
                         textAlign: 'center',
                         fontSize: '9px',

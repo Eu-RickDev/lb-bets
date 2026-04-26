@@ -17,7 +17,7 @@ local function addApp()
 
         ui = GetCurrentResourceName() .. "/ui/index.html",
 
-        icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/icon.svg",
+        icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/assets/app-icon.png",
 
         fixBlur = true
     })
