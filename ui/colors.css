@@ -1,0 +1,61 @@
+/* CDBets — design tokens (always-dark casino theme) */
+:root {
+    --radius: 1rem;
+
+    --background: oklch(0.08 0.01 300);
+    --foreground: oklch(0.98 0 0);
+
+    --card: oklch(0.14 0.04 305);
+    --card-foreground: oklch(0.98 0 0);
+
+    --popover: oklch(0.11 0.025 300);
+    --popover-foreground: oklch(0.98 0 0);
+
+    --primary: oklch(0.48 0.22 305);
+    --primary-foreground: oklch(1 0 0);
+
+    --secondary: oklch(0.18 0.05 305);
+    --secondary-foreground: oklch(0.95 0 0);
+
+    --muted: oklch(0.16 0.03 305);
+    --muted-foreground: oklch(0.7 0.04 300);
+
+    --accent: oklch(0.7 0.22 310);
+    --accent-foreground: oklch(0.1 0 0);
+
+    --destructive: oklch(0.6 0.24 27);
+    --destructive-foreground: oklch(0.98 0 0);
+
+    --border: oklch(0.25 0.07 305);
+    --input: oklch(0.2 0.05 305);
+    --ring: oklch(0.7 0.22 310);
+
+    --neon: oklch(0.7 0.22 310);
+    --neon-foreground: oklch(0.1 0 0);
+    --neon-glow: oklch(0.48 0.22 305);
+    --gold: oklch(0.85 0.16 85);
+    --emerald: oklch(0.7 0.18 150);
+
+    --gradient-neon: linear-gradient(135deg, oklch(0.48 0.22 305), oklch(0.7 0.22 310));
+    --gradient-gold: linear-gradient(135deg, oklch(0.85 0.16 85), oklch(0.78 0.16 70));
+    --gradient-card: linear-gradient(160deg, oklch(0.16 0.05 305) 0%, oklch(0.09 0.02 300) 100%);
+    --gradient-radial: radial-gradient(circle at 50% 0%, oklch(0.48 0.22 305 / 0.35), transparent 70%);
+
+    --shadow-neon: 0 8px 32px -4px oklch(0.48 0.22 305 / 0.5), 0 0 60px oklch(0.7 0.22 310 / 0.2);
+    --shadow-neon-sm: 0 2px 12px oklch(0.48 0.22 305 / 0.25);
+    --shadow-gold: 0 0 16px oklch(0.85 0.16 85 / 0.35);
+    --shadow-elevated: 0 12px 40px -8px oklch(0 0 0 / 0.6);
+
+    /* legacy template fallbacks (so the existing template wiring still has values) */
+    --background-primary: var(--background);
+    --background-highlight: var(--card);
+    --text-primary: var(--foreground);
+    --text-secondary: var(--muted-foreground);
+}
+
+/* The casino theme is intentionally always dark — the LB Phone settings
+   theme switch is ignored so the brand identity stays consistent. */
+[data-theme='light'],
+[data-theme='dark'] {
+    color-scheme: dark;
+}
